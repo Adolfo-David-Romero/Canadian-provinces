@@ -12,5 +12,10 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
+    private void OnDisplayBtnClicked(object sender, EventArgs e)
+    {
+        
+    }
+
     
 }
