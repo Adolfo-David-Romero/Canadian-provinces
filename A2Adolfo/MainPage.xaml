@@ -4,9 +4,7 @@
              x:Class="A2Adolfo.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <VerticalStackLayout>
 
             <Label
                 Text="List of all Canadian Provinces"
@@ -16,41 +14,18 @@
             <Label
                 Text="Select any of the provinces listed below!"
                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="" />
-            
-            <ListView ItemsSource="{Binding provinces}">
+                SemanticProperties.HeadingLevel="Level2"/>
+            <!--List-->
+            <ListView x:Name="provincesListView" 
+                      ItemSelected="productsListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2"
-                                       Source="{Binding provinceFlag}"
-                                       Aspect="AspectFill"
-                                       HeightRequest="60"
-                                       WidthRequest="60" />
-                                <Label Grid.Column="1"
-                                       Text="{Binding ProvinceName}"
-                                       FontAttributes="Bold" />
-                                <Label Grid.Row="1"
-                                       Grid.Column="1"
-                                       Text="{Binding provinceCapital}"
-                                       FontAttributes="Italic"
-                                       VerticalOptions="End" />
-                            </Grid>
-                        </ViewCell>
+                        <ImageCell ImageSource="{Binding ProvinceFlag}"
+                                   Text="{Binding ProvinceName}"
+                                   Detail="{Binding ProvinceCapital}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
             <Button
                 x:Name="DisplayBtn"
                 Text="Display List"
@@ -58,8 +33,6 @@
                 SemanticProperties.Hint=""
                 HorizontalOptions="Fill"
                 VerticalOptions="Center"/>
-
-            
         </VerticalStackLayout>
     </ScrollView>
 

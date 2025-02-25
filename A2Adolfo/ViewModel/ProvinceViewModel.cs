@@ -11,16 +11,16 @@ public class ProvinceViewModel
         //populate list
         provinces.AddRange(new []
         {
-            new Province("Ontario", "Toronto", "ontario.jpg"),
-            new Province("Alberta", "Edmonton", "alberta.jpg"),
-            new Province("British Columbia", "Victoria", "manitoba.jpg"),
-            new Province("Manitoba", "Winnipeg", "british_columbia.jpg"),
-            new Province("New Brunswick", "Fredericton", "new_brunswick.jpg"),
-            new Province("Newfoundland and Labrador", "St.John's", "newfoundland_and_labrador.jpg"),
-            new Province("Nova Scotia", "Halifax", "nova_scotia.jpg"),
-            new Province("Prince Edward Island", "Charlottetown", "prince_edward_island.jpg"),
-            new Province("Québec", "Québec", "Quebec.jpg"),
-            new Province("Saskatchewan", "Regina", "saskatchewan.jpg")
+            new Province("Ontario", "Toronto", "ontario.png"),
+            new Province("Alberta", "Edmonton", "alberta.png"),
+            new Province("British Columbia", "Victoria", "manitoba.png"),
+            new Province("Manitoba", "Winnipeg", "british_columbia.png"),
+            new Province("New Brunswick", "Fredericton", "new_brunswick.png"),
+            new Province("Newfoundland and Labrador", "St.John's", "newfoundland_and_labrador.png"),
+            new Province("Nova Scotia", "Halifax", "nova_scotia.png"),
+            new Province("Prince Edward Island", "Charlottetown", "prince_edward_island.png"),
+            new Province("Québec", "Québec", "Quebec.png"),
+            new Province("Saskatchewan", "Regina", "saskatchewan.png")
         });
     }
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using A2Adolfo.Model;
+using A2Adolfo.ViewModel;
 
 namespace A2Adolfo;
 
@@ -9,32 +10,24 @@ namespace A2Adolfo;
 */
 public partial class MainPage : ContentPage
 {
+    private ProvinceViewModel viewModel = new ProvinceViewModel();
     List<Province> provinces = new List<Province>(); //Create empty Province list
-    public ObservableCollection<Province> Provinces { get; set; }
+    ObservableCollection<Province> provincesList;
     
     public MainPage()
     {
         InitializeComponent();
-        
+        provinces = viewModel.GetProvinces();
+        provincesList = new ObservableCollection<Province>(provinces);
     }
 
     private void OnDisplayBtnClicked(object sender, EventArgs e)
     {
-        
-        /*Province ontario = new Province("Ontario", "Toronto", "ontario.jpg");
-        Province alberta = new Province("Alberta", "Edmonton", "alberta.jpg");
-        Province britishColumbia = new Province("British Columbia", "Victoria", "manitoba.jpg");
-        Province manitoba = new Province("Manitoba", "Winnipeg", "british_columbia.jpg");
-        Province newBrunswick = new Province("New brunswick", "Fredericton", "new_brunswick.jpg");
-        Province newfoundlandAndLabrador = new Province("Newfoundland and Labrador", "St.John's", "newfoundland_and_labrador.jpg");
-        Province novaScotia = new Province("Newfoundland and Labrador", "Halifax", "nova_scotia.jpg");
-        Province princeEdwardIsland = new Province("Prince Edward Island", "Charlottetown", "prince_edward_island.jpg");
-        Province quebec = new Province("Québec", "Québec", "Quebec.jpg");
-        Province saskatchewan = new Province("Saskatchewan", "Regina", "saskatchewan.jpg");*/
-        
-        
-        
-        
+        provincesListView.ItemsSource = provincesList;
+    }
+
+    private void productsListView_ItemSelected(object sender, EventArgs e)
+    {
         
     }
 

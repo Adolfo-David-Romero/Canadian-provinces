@@ -21,8 +21,18 @@ public class Province
         get { return _provinceName; }
         set { _provinceName = value; }
     }
-    public string ProvinceCapital { get; set; }
-    public string ProvinceFlag { get; set; }
+
+    public string ProvinceCapital
+    {
+        get { return _provinceCapital; }
+        set { _provinceCapital = value; }
+    }
+
+    public string ProvinceFlag
+    {
+        get { return _provinceFlag; }
+        set { _provinceFlag = value; }
+    }
     
     //Methods
     
