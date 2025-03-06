@@ -19,17 +19,25 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         provinces = viewModel.GetProvinces();
         provincesList = new ObservableCollection<Province>(provinces);
+        
+        ProvincesCollectionView.ItemsSource = provincesList; // Set the items source directly on the CollectionView
     }
 
     private void OnDisplayBtnClicked(object sender, EventArgs e)
     {
-        provincesListView.ItemsSource = provincesList;
+        // Toggle the visibility of the CollectionView
+        ProvincesCollectionView.IsVisible = !ProvincesCollectionView.IsVisible;
+
+        if (sender is Button button)
+        {
+            button.Text = ProvincesCollectionView.IsVisible ? "Hide Provinces" : "Display Provinces";
+        }
     }
 
-    private void productsListView_ItemSelected(object sender, EventArgs e)
+    /*private void productsListView_ItemSelected(object sender, EventArgs e)
     {
         
-    }
+    }*/
 
     
 }

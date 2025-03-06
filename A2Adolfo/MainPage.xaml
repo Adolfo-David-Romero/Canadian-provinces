@@ -15,17 +15,20 @@
                 Text="Select any of the provinces listed below!"
                 Style="{StaticResource SubHeadline}"
                 SemanticProperties.HeadingLevel="Level2"/>
+            
             <!--List-->
-            <ListView x:Name="provincesListView" 
-                      ItemSelected="productsListView_ItemSelected">
-                <ListView.ItemTemplate>
+            <CollectionView x:Name="ProvincesCollectionView" 
+                            IsVisible="False">
+                <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell ImageSource="{Binding ProvinceFlag}"
-                                   Text="{Binding ProvinceName}"
-                                   Detail="{Binding ProvinceCapital}" />
+                        <VerticalStackLayout Padding="10">
+                            <Image Source="{Binding ProvinceFlag}" HeightRequest="100"/>
+                            <Label Text="{Binding ProvinceName}" FontAttributes="Bold" FontSize="18" HorizontalOptions="Center"/>
+                            <Label Text="{Binding ProvinceCapital}" FontSize="14" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <Button
                 x:Name="DisplayBtn"
                 Text="Display List"

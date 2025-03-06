@@ -19,9 +19,10 @@ public class ProvinceViewModel
             new Province("Newfoundland and Labrador", "St.John's", "newfoundland_and_labrador.png"),
             new Province("Nova Scotia", "Halifax", "nova_scotia.png"),
             new Province("Prince Edward Island", "Charlottetown", "prince_edward_island.png"),
-            new Province("Québec", "Québec", "Quebec.png"),
+            new Province("Québec", "Québec", "quebec.png"),
             new Province("Saskatchewan", "Regina", "saskatchewan.png")
         });
+        
     }
 
     //returns list of provinces
