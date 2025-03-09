@@ -28,6 +28,15 @@ public class ProvinceViewModel
     //returns list of provinces
     public List<Province> GetProvinces()
     {
+        for (int i = 0; i < provinces.Count; i++) //Printing for debugging
+        {
+            Province province = provinces[i];
+            Console.WriteLine($"Province Capital: {province.ProvinceCapital}");
+            Console.WriteLine($"Province Name: {province.ProvinceName}");
+            Console.WriteLine($"Province Flag: {province.ProvinceFlag}");
+            Console.WriteLine("-------------------------------------");
+            
+        }
         return provinces;
     }
 }

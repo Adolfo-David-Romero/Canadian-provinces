@@ -11,33 +11,40 @@ namespace A2Adolfo;
 public partial class MainPage : ContentPage
 {
     private ProvinceViewModel viewModel = new ProvinceViewModel();
-    List<Province> provinces = new List<Province>(); //Create empty Province list
-    ObservableCollection<Province> provincesList;
-    
+
+    public List<Province> Provinces { get; set; }
+
     public MainPage()
     {
         InitializeComponent();
-        provinces = viewModel.GetProvinces();
-        provincesList = new ObservableCollection<Province>(provinces);
-        
-        ProvincesCollectionView.ItemsSource = provincesList; // Set the items source directly on the CollectionView
+
+        // Load data from ViewModel
+        Provinces = viewModel.GetProvinces();
+
+        // Bind ListView to data
+        provincesListView.ItemsSource = Provinces;
     }
 
     private void OnDisplayBtnClicked(object sender, EventArgs e)
     {
-        // Toggle the visibility of the CollectionView
-        ProvincesCollectionView.IsVisible = !ProvincesCollectionView.IsVisible;
+        // Toggle visibility of ListView
+        provincesListView.IsVisible = !provincesListView.IsVisible;
 
         if (sender is Button button)
         {
-            button.Text = ProvincesCollectionView.IsVisible ? "Hide Provinces" : "Display Provinces";
+            button.Text = provincesListView.IsVisible ? "Hide Provinces" : "Display Provinces";
         }
     }
 
-    /*private void productsListView_ItemSelected(object sender, EventArgs e)
+    private async void OnProvinceSelected(object sender, SelectedItemChangedEventArgs e)
     {
-        
-    }*/
+        if (e.SelectedItem is Province selectedProvince)
+        {
+            // Navigate to ProvinceDetailPage
+            await Navigation.PushAsync(new ProvincePage(selectedProvince));
 
-    
+            // Clear selection
+            provincesListView.SelectedItem = null;
+        }
+    }
 }

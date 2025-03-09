@@ -4,6 +4,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="A2Adolfo.ProvincePage">
     <ContentPage.Content>
+        <VerticalStackLayout Padding="20">
+            <Label x:Name="ProvinceNameLabel" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center"/>
+            <Label x:Name="ProvinceCapitalLabel" FontSize="18" HorizontalOptions="Center"/>
+            <Image x:Name="ProvinceFlagImage" HeightRequest="200"/>
+            <Label Text="By: Adolfo David Romero 991555778" FontSize="18" HorizontalOptions="Center"/>
+        </VerticalStackLayout>
         
     </ContentPage.Content>
+    
 </ContentPage>
