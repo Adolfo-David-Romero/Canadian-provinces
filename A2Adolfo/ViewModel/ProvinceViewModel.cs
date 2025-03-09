@@ -2,6 +2,10 @@ using A2Adolfo.Model;
 
 namespace A2Adolfo.ViewModel;
 
+/*
+ Adolfo David Romero
+ 99155778
+*/
 public class ProvinceViewModel
 {
     List<Province> provinces = new List<Province>(); //Create empty Province list

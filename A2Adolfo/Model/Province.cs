@@ -1,5 +1,9 @@
 namespace A2Adolfo.Model;
 
+/*
+ Adolfo David Romero
+ 99155778
+*/
 public class Province
 {
     //Fields
